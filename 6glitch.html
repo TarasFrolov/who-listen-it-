@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Video Landing</title>
+    <style>
+        /* Убираем отступы и фиксируем экран от скролла */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Запрет на листание */
+            background-color: #000;
+        }
+
+        /* Контейнер для видео на весь экран */
+        .bg-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: 110vw;  /* +10% к ширине */
+            height: 110vh;
+            z-index: 0; /* Видео на самом нижнем слое */
+            transform: translate(-50%, -50%); /* Центрирование */
+            object-fit: cover;
+            background-size: cover;
+        }
+
+       /* Белый прямоугольник в левом нижнем углу */
+        .info-box {
+            position: absolute;
+            bottom: 40px; 
+            left: 40px;   
+            width: 61.121mm;
+            background-color: #ffffff; /* Чистый белый */
+            padding: 0px; 
+            margin: 0px;
+            box-sizing: border-box;
+            
+            /* Чтобы текст не вылезал за границы, если его будет много */
+            overflow: hidden;
+        }
+
+        /* Текст внутри прямоугольника */
+        .info-box p {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #000000; /* Черный цвет текста */
+            
+            /* Настройки типографики */
+            font-size: 11pt;    /* Размер шрифта */
+            line-height: 13pt; /* Интерлиньяж (межстрочный интервал) */
+            
+            padding-left: 1mm; 
+            padding-top: 0;
+
+            white-space: pre-line; 
+            letter-spacing: -0.01em; /* Легкий трекинг для плотности, как в печати */
+
+        }
+        .info-box p a {
+            color: #000000;         /* Черный цвет, как у остального текста */
+            text-decoration: none;  /* Убирает стандартное подчеркивание */         /* Каждая ссылка будет с новой строки */
+            width: 100%;
+        }
+        .info-box p a:hover {
+            text-decoration: underline; /* Подчеркивание появится только при наведении */
+            background-color: #f0f0f0;  /* Легкий серый фон при наведении */
+        }
+        /* Общие стили для маленьких квадратов-кнопок */
+        .nav-box {
+            position: absolute;
+            right: 40px; /* Отступ от правого края */
+            width: 10mm;  /* Маленький размер квадрата */
+            height: 10mm;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            text-decoration: none;
+            color: #000;
+            font-family: Arial, sans-serif;
+            font-size: 14pt;
+            transition: opacity 0.2s;
+        }
+
+        .nav-box:hover {
+            opacity: 0.8; /* Эффект при наведении */
+        }
+
+        /* Позиция верхнего квадрата */
+        .nav-top {
+            top: 10px;
+            left: 40px
+        }
+
+        /* Позиция нижнего квадрата */
+        .nav-top-right {
+            top: 10px;
+            right: 40px
+        }
+    </style>
+</head>
+<body>
+
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="vedio6_6.mp4" type="video/mp4">
+    </video>
+
+    <a href="5noise.html" class="nav-box nav-top">←</a>
+
+
+    <div class="info-box">
+        <p>Первая строчка текста
+           <a href="https://google.com" target="_blank">Вторая строка — еще одна</a>
+           Третья строчка о проекте
+           Четвертая строчка
+           Пятая строчка
+           Шестая строчка
+           Седьмая строчка</p>
+    </div>
+
+</body>
+</html>
